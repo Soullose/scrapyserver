@@ -4,14 +4,14 @@ var cheerio = require("cheerio");
 
 const ch = require("../../utils/myCheerio");
 
-app.get("/", async (req, res) => {
+app.get("/cnode", async (req, res) => {
   const url = "cnodejs.org";
 
   var items = [];
   const sres = await request.get(url);
 
   var $element = ch(sres.text, "#topic_list .topic_title");
-  console.log($element);
+  // console.log($element);
 
   var $ = cheerio.load(sres.text);
   $("#topic_list .topic_title").each(function (idx, element) {
